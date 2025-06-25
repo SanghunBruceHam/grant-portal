@@ -1,14 +1,10 @@
 export const grants = [
   {
-    id: 1,
-    title: 'グリーン住宅支援事業',
-    amount: '최대 수십만 엔 지원',
-    url: 'https://example.com/green-housing'
+    title: "資格取得支援金",
+    region: "전국",
+    amount: "최대 100,000円",
+    link: "https://example.com",
+    tags: ["전국", "마감 임박"]
   },
-  {
-    id: 2,
-    title: '住居確保給付金',
-    amount: '임대료 일부 지원',
-    url: 'https://example.com/rent-relief'
-  }
+  ...
 ];
