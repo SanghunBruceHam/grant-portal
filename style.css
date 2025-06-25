@@ -35,11 +35,6 @@
 
 }
 
-.card:hover {
-  transform: translate3d(0, -5px, 0);
-  box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-  background-color: #f9faff;
-}
 
 .card {
   display: flex;
@@ -112,4 +107,17 @@ footer a:hover {
   font-size: 0.75rem;
   padding: 0.25rem 0.5rem;
   border-radius: 4px;
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--shadow-light);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  border-radius: var(--card-radius);
+}
+.card:hover::before {
+  opacity: 1;
 }
