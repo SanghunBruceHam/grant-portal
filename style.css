@@ -100,12 +100,24 @@ footer {
   box-shadow: inset 0 1px 3px rgba(0,0,0,0.05);
   margin-top: 4rem;
 }
-
-.footer-content {
-  display: grid;
-  grid-template-columns: auto 1fr auto;
+footer {
+  display: flex;
+  justify-content: center;
   align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
 }
+.footer-content {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.footer-content a {
+  margin: 0 0.5rem;
+}
+
 .footer-content > .trust { justify-self: start; }
 .footer-content > .footer-links { justify-self: center; }
 .footer-content > .legal { justify-self: end; }
@@ -120,6 +132,10 @@ footer {
 footer a {
   color: var(--primary-color);
   text-decoration: none;
+}
+
+.footer-content a {
+  margin: 0 0.5rem;
 }
 
 footer a:hover {
