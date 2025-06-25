@@ -9,3 +9,39 @@
 .card h3 { margin: 0; font-size: 1.2rem; }
 .card p { margin: 0.5rem 0; }
 .card a { color: #0077cc; text-decoration: none; }
+
+#grant-list {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+}
+
+.card {
+  border: none;
+  border-radius: 8px;
+  padding: 1rem;
+  background: #fff;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 12px 24px rgba(0,0,0,0.15);
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.title { margin-bottom: 0.5rem; font-size: 1.2rem; }
+.amount { color: #333; margin-bottom: 1rem; }
+.link { margin-top: auto; color: #0077cc; text-decoration: none; }
+.link:hover { text-decoration: underline; }
+
+body { font-size: 16px; }
+@media (max-width: 600px) {
+  body { font-size: 15px; }
+}
