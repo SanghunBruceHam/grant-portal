@@ -79,17 +79,18 @@ footer {
 .trust-icon {
   width: 24px;
   height: auto;
+  vertical-align: middle;
 }
 
 footer a {
   color: var(--primary-color);
-  margin-left: 0.5rem;
   text-decoration: none;
 }
 
 footer a:hover {
   text-decoration: underline;
 }
+
 
 .trust-icon {
   width: 24px;
