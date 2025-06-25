@@ -185,3 +185,9 @@ footer a:hover {
   color: #fff;
   border-color: var(--primary-color);
 }
+
+.region {
+  font-size: 0.9rem;
+  color: #777;
+  margin: 0.3rem 0;
+}
