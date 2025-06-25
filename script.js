@@ -11,10 +11,11 @@ const listEl = document.getElementById('grant-list');
 buttons.forEach(btn => {
   btn.addEventListener('click', async () => {
     const grants = await loadCategory(btn.dataset.cat);
-    listEl.innerHTML = ''; // 이전 카드 제거
-    grants.forEach(g => {
-      const card = createCard(g);
-      listEl.appendChild(card);
-    });
+    listEl.innerHTML = '';
+    if (grants.length === 0) {
+      listEl.textContent = '해당 카테고리에 보조금 정보가 없습니다.';
+    } else {
+      grants.forEach(g => listEl.appendChild(createCard(g)));
+    }
   });
 });
