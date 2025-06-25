@@ -12,6 +12,17 @@ main, header {
   padding: 2rem 1rem;
 }
 
+.intro {
+  font-size: 1rem;
+  line-height: 1.6;
+  background: #fff;
+  padding: 1rem;
+  border-left: 4px solid var(--primary-color);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  border-radius: 6px;
+  margin-bottom: 2rem;
+}
+
 
 body {
   font-family: 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif;
