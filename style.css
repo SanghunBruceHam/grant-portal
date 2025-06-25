@@ -98,3 +98,17 @@ footer a:hover {
   vertical-align: middle;
   margin-right: 0.5rem;
 }
+
+.card {
+  position: relative;
+}
+.card-label {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  background: var(--primary-color);
+  color: white;
+  font-size: 0.75rem;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+}
