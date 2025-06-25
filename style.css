@@ -1,10 +1,15 @@
 :root {
-  --card-bg: #fff;
+  --card-bg: #ffffff;
   --card-radius: 8px;
-  --shadow-light: rgba(154,160,185,0.05);
-  --shadow-dark: rgba(166,173,201,0.2);
   --primary-color: #0077cc;
+  --secondary-color: #5e6e82;
+  --accent-color: #f2c94c;
+  --gray-light: #f5f7fa;
+  --gray-dark: #444;
+  --warning-color: #f39c12;
+  --success-color: #2ecc71;
 }
+
 
 body {
   font-family: 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif;
