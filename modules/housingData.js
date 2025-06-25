@@ -1,11 +1,14 @@
-
-// modules/housingData.js
 export const grants = [
   {
     id: 1,
-    title: '児童手当',
-    amount: '5,000～15,000円／月',
-    url: 'https://example.com',
+    title: 'グリーン住宅支援事業',
+    amount: '최대 수십만 엔 지원',
+    url: 'https://example.com/green-housing'
   },
-  // … 추가 항목
+  {
+    id: 2,
+    title: '住居確保給付金',
+    amount: '임대료 일부 지원',
+    url: 'https://example.com/rent-relief'
+  }
 ];
