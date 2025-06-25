@@ -90,3 +90,10 @@ footer a {
 footer a:hover {
   text-decoration: underline;
 }
+
+.trust-icon {
+  width: 24px;
+  height: auto;
+  vertical-align: middle;
+  margin-right: 0.5rem;
+}
