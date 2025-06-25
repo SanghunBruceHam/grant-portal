@@ -67,10 +67,14 @@ footer {
 }
 
 .footer-content {
-  display: inline-flex;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
   align-items: center;
-  gap: 0.5rem;
 }
+.footer-content > .trust { justify-self: start; }
+.footer-content > .footer-links { justify-self: center; }
+.footer-content > .legal { justify-self: end; }
+
 
 .trust-icon {
   width: 24px;
