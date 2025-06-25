@@ -6,6 +6,12 @@
   --primary-color: #0077cc;
 }
 
+main, header {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
 
 body {
   font-family: 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif;
