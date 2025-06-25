@@ -7,52 +7,49 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
   <header>
     <h1>👪 개인 대상 일본 보조금 포털</h1>
     <p class="intro">
-      이곳은 자녀 양육, 주택 비용, 자격증 취득 등 **일상 속 고민에 꼭 필요한** 일본 내 보조금 제도들을  
-      “한 페이지에서 쉽게 찾아보고, 바로 신청 링크로 이동”할 수 있게 모아둔 사이트입니다.  
-      작성된 정보는 핵심만 담아 빠르게 확인할 수 있도록 구성했습니다.
+      이곳은 자녀 양육, 주택 비용, 자격증 취득 등 <strong>일상 속 고민에 꼭 필요한</strong> 일본 내 보조금 제도들을  
+      <strong>“한 페이지에서 쉽게 찾아보고, 신청 링크로 바로 이동”</strong>할 수 있게 정리한 사이트입니다.  
+      핵심 정보만 요약해 빠르게 확인하실 수 있도록 구성했습니다.
     </p>
-    <nav aria-label="카테고리" class="button-group">
-  <button data-cat="child">자녀</button>
-  <button data-cat="housing">주택</button>
-  <button data-cat="qualification">자격</button>
-</nav>
 
+    <nav aria-label="카테고리" class="button-group">
+      <button data-cat="child">자녀</button>
+      <button data-cat="housing">주택</button>
+      <button data-cat="qualification">자격</button>
+    </nav>
   </header>
 
-  <!-- 카드 템플릿 (스크립트에서 복제해 사용) -->
+  <!-- 카드 템플릿 -->
   <template id="grant-card-template">
     <div class="card">
-      <div class="badge-group">
-    <span class="badge">전국</span>
-    <span class="badge warning">마감 임박</span>
-  </div>
-      <img src="icons/child.svg" alt="" class="card-icon">
-      <h3 class="title"></h3>
-          <p class="region">적용 지역: 전국</p> <!-- NEW -->
-      <p class="amount"></p>
-      <a class="link" target="_blank" rel="noopener">자세히 보기</a>
+      <div class="badge-group"></div> <!-- JS로 배지 자동 삽입 -->
+      <img src="icons/child.svg" alt="보조금 아이콘" class="card-icon" />
+      <h3 class="title">보조금 이름</h3>
+      <p class="region">적용 지역: 전국</p>
+      <p class="amount">지원 내용</p>
+      <a class="link" href="#" target="_blank" rel="noopener noreferrer">자세히 보기</a>
     </div>
   </template>
 
   <main id="grant-list" role="region" aria-live="polite">
-    <p class="initial-message">상단의 카테고리를 선택하시면 관련 보조금 정보가 나타납니다.</p>
+    <p class="initial-message">👆 상단의 카테고리를 선택하시면 관련 보조금 정보가 나타납니다.</p>
   </main>
+
+  <footer>
+    <div class="footer-content">
+      <img src="https://www.svgrepo.com/show/390106/security-protection-ssl-certificate.svg"
+           alt="SSL 인증 보안 연결" class="trust-icon" />
+      <span>공인 정보 기반 서비스</span>
+      <a href="mailto:you@example.com">문의하기</a>
+      <a href="privacy.html">개인정보 처리방침</a>
+    </div>
+  </footer>
 
   <script type="module" src="script.js"></script>
 </body>
-
-<footer>
-  <div class="footer-content">
-    <img src="https://www.svgrepo.com/show/390106/security-protection-ssl-certificate.svg"
-     alt="SSL Secure"
-     class="trust-icon">
-    <span>공인 정보 기반 서비스</span>
-    <a href="mailto:you@example.com">문의하기</a>
-    <a href="privacy.html">개인정보 처리방침</a>
-  </div>
-</footer>
 </html>
