@@ -1,23 +1,25 @@
-export function createCard(data) {
-  const template = document.getElementById('grant-card-template');
-  const card = template.content.cloneNode(true);  // 템플릿 복사
+function createCard(data) {
+  const template = document.getElementById("grant-card-template");
+  const card = template.content.cloneNode(true);
+  card.querySelector(".title").textContent = data.title;
+  card.querySelector(".amount").textContent = data.amount;
+  card.querySelector(".link").href = data.link;
+  card.querySelector(".card-icon").src = data.icon || 'default.svg';
 
-  // 기본 정보 채우기
-  card.querySelector('.title').textContent = data.title;
-  card.querySelector('.region').textContent = `적용 지역: ${data.region}`;
-  card.querySelector('.amount').textContent = data.amount;
-  card.querySelector('.link').href = data.link;
-
-  // ✅ 여기서 badge 넣기!
-  const badgeBox = card.querySelector('.badge-group');  // 배지 들어갈 div
-
+  // 🔥 [여기!] 배지를 동적으로 추가하는 코드
   if (data.tags && Array.isArray(data.tags)) {
+    const container = document.createElement('div');
+    container.classList.add('tag-container');
+
     data.tags.forEach(tag => {
-      const span = document.createElement('span');  // 새 <span> 만들기
-      span.className = 'badge';                     // .badge 클래스 넣기
-      span.textContent = tag;                       // 텍스트 넣기
-      badgeBox.appendChild(span);                   // badge-group에 붙이기
+      const badge = document.createElement('span');
+      badge.classList.add('tag-badge');
+      badge.textContent = tag;
+      container.appendChild(badge);
     });
+
+    const cardElement = card.querySelector('.card');
+    cardElement.insertBefore(container, cardElement.firstChild); // 카드 상단에 추가
   }
 
   return card;
