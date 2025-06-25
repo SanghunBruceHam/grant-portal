@@ -1,3 +1,12 @@
+:root {
+  --card-bg: #fff;
+  --card-radius: 8px;
+  --shadow-light: rgba(154,160,185,0.05);
+  --shadow-dark: rgba(166,173,201,0.2);
+  --primary-color: #0077cc;
+}
+
+
 .card {
   border: 1px solid #ccc;
   border-radius: 8px;
