@@ -1,11 +1,10 @@
-
-// modules/childData.js
 export const grants = [
   {
-    id: 1,
-    title: '児童手当',
-    amount: '5,000～15,000円／月',
-    url: 'https://example.com',
+    title: "資格取得支援金",
+    region: "전국",
+    amount: "최대 100,000円",
+    link: "https://example.com",
+    tags: ["전국", "마감 임박"]
   },
-  // … 추가 항목
+  ...
 ];
