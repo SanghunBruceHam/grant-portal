@@ -1,25 +1,30 @@
-function createCard(data) {
-  const template = document.getElementById("grant-card-template");
+export function createCard(grant) {
+  const template = document.getElementById('grant-card-template');
   const card = template.content.cloneNode(true);
-  card.querySelector(".title").textContent = data.title;
-  card.querySelector(".amount").textContent = data.amount;
-  card.querySelector(".link").href = data.link;
-  card.querySelector(".card-icon").src = data.icon || 'default.svg';
+  
+  // 제목, 금액, 링크 등 기존 내용 삽입
+  card.querySelector('.title').textContent = grant.title;
+  card.querySelector('.amount').textContent = grant.amount;
+  card.querySelector('.region').textContent = `적용 지역: ${grant.region}`;
+  card.querySelector('.link').href = grant.url;
 
-  // 🔥 [여기!] 배지를 동적으로 추가하는 코드
-  if (data.tags && Array.isArray(data.tags)) {
-    const container = document.createElement('div');
-    container.classList.add('tag-container');
+  // 아이콘 동적 로딩 (옵션)
+  if (grant.icon) {
+    const icon = card.querySelector('.card-icon');
+    icon.src = grant.icon;
+    icon.alt = `${grant.title} 아이콘`;
+  }
 
-    data.tags.forEach(tag => {
-      const badge = document.createElement('span');
-      badge.classList.add('tag-badge');
-      badge.textContent = tag;
-      container.appendChild(badge);
+  // ✅ [NEW] 배지 삽입
+  const badgeGroup = card.querySelector('.badge-group');
+  if (grant.badges && Array.isArray(grant.badges)) {
+    grant.badges.forEach(badgeText => {
+      const span = document.createElement('span');
+      span.className = 'badge';
+      if (badgeText.includes('마감')) span.classList.add('warning');
+      span.textContent = badgeText;
+      badgeGroup.appendChild(span);
     });
-
-    const cardElement = card.querySelector('.card');
-    cardElement.insertBefore(container, cardElement.firstChild); // 카드 상단에 추가
   }
 
   return card;
