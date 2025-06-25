@@ -15,7 +15,7 @@ buttons.forEach(btn => {
     if (grants.length === 0) {
       listEl.textContent = '해당 카테고리에 보조금 정보가 없습니다.';
     } else {
-      grants.forEach(g => listEl.appendChild(createCard(g)));
+      grants.forEach(grant => listEl.appendChild(createCard(grant)));
     }
   });
 });
