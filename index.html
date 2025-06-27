@@ -16,20 +16,18 @@
       <strong>“한 페이지에서 쉽게 찾아보고, 신청 링크로 바로 이동”</strong>할 수 있게 정리한 사이트입니다.  
       핵심 정보만 요약해 빠르게 확인하실 수 있도록 구성했습니다.
     </p>
-
-    <nav aria-label="카테고리" class="button-group">
-      <button data-cat="child">자녀</button>
-      <button data-cat="housing">주택</button>
-      <button data-cat="qualification">자격</button>
-    </nav>
-
-    <p class="initial-message">👆 상단의 카테고리를 선택하시면 관련 보조금 정보가 나타납니다.</p>
   </header>
+
+  <nav aria-label="카테고리" class="button-group">
+    <button data-cat="child">자녀</button>
+    <button data-cat="housing">주택</button>
+    <button data-cat="qualification">자격</button>
+  </nav>
 
   <!-- 카드 템플릿 -->
   <template id="grant-card-template">
     <div class="card">
-      <div class="badge-group"></div> <!-- JS로 배지 자동 삽입 -->
+      <div class="badge-group"></div>
       <img src="icons/child.svg" alt="보조금 아이콘" class="card-icon" />
       <h3 class="title">보조금 이름</h3>
       <p class="region">적용 지역: 전국</p>
@@ -38,7 +36,9 @@
     </div>
   </template>
 
-  <main id="grant-list" role="region" aria-live="polite"></main>
+  <main id="grant-list" role="region" aria-live="polite">
+    <p class="initial-message">👆 상단의 카테고리를 선택하시면 관련 보조금 정보가 나타납니다.</p>
+  </main>
 
   <footer>
     <div class="footer-content">
