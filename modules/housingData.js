@@ -6,5 +6,4 @@ export const grants = [
     url: "https://example.com",          // ✅ 'link' → 'url'
     badges: ["전국", "마감 임박"]        // ✅ 'tags' → 'badges'
   },
-  ...
 ];
