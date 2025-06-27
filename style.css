@@ -8,10 +8,8 @@
   --gray-dark: #444;
   --warning-color: #f39c12;
   --success-color: #2ecc71;
-  --shadow-color: rgba(0, 0, 0, 0.07);
 }
 
-/* ========== 기본 설정 ========== */
 body {
   font-family: 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif;
   background-color: var(--gray-light);
@@ -19,7 +17,6 @@ body {
   margin: 0;
   padding: 0;
   font-size: 16px;
-  line-height: 1.6;
 }
 
 @media (max-width: 600px) {
@@ -32,22 +29,21 @@ main, header {
   padding: 3rem 1.5rem 2rem;
 }
 
-/* ========== 소개 박스 ========== */
 .intro {
+  font-size: 1rem;
+  line-height: 1.6;
   background: #fff;
   padding: 1.2rem;
   border-left: 4px solid var(--primary-color);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
   border-radius: 6px;
-  margin-bottom: 2.5rem;
-  box-shadow: 0 2px 6px var(--shadow-color);
-  font-size: 1rem;
+  margin-bottom: 2rem;
 }
 
-/* ========== 카테고리 버튼 ========== */
 .button-group {
   display: flex;
   gap: 0.75rem;
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
   flex-wrap: wrap;
   justify-content: center;
 }
@@ -59,8 +55,8 @@ main, header {
   border-radius: 6px;
   font-weight: 500;
   cursor: pointer;
-  transition: background 0.2s, color 0.2s;
   box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+  transition: background 0.2s, color 0.2s;
 }
 
 .button-group button:hover,
@@ -70,7 +66,22 @@ main, header {
   border-color: var(--primary-color);
 }
 
-/* ========== 그리드 레이아웃 ========== */
+/* ⬇️ 안내 메시지 위치 및 스타일 개선 */
+.initial-message {
+  text-align: center;
+  font-size: 0.95rem;
+  margin-top: 0.8rem;
+  margin-bottom: 1.5rem;
+  padding: 0.8rem 1rem;
+  background: #fff;
+  border-left: 4px solid var(--primary-color);
+  border-radius: 6px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 #grant-list {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -79,50 +90,26 @@ main, header {
   margin-top: 1.5rem;
 }
 
-/* ========== 카드 스타일 ========== */
+/* 카드 */
 .card {
   position: relative;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 1.25rem;
   border-radius: var(--card-radius);
+  padding: 1.25rem;
   background: var(--card-bg);
-  box-shadow: 0 2px 6px var(--shadow-color);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 4px 10px var(--shadow-color);
+  transform: translateY(-5px);
 }
 
-.card::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: rgba(0,0,0,0.03);
-  opacity: 0;
-  border-radius: var(--card-radius);
-  transition: opacity 0.3s ease;
-  z-index: 0;
-}
-
-.card:hover::before {
-  opacity: 1;
-}
-
-/* ========== 카드 내부 요소 ========== */
-.card-icon {
-  width: 40px;
-  height: 40px;
-  margin-bottom: 0.75rem;
-  object-fit: contain;
-}
-
-h3.title {
+.card h3.title {
+  margin-bottom: 0.5rem;
   font-size: 1.2rem;
-  margin: 0.5rem 0;
 }
 
 .amount {
@@ -130,26 +117,32 @@ h3.title {
   margin-bottom: 1rem;
 }
 
-.region {
-  font-size: 0.9rem;
-  color: #777;
-  margin-bottom: 0.75rem;
-}
-
 .link {
   margin-top: auto;
   color: var(--primary-color);
   text-decoration: none;
-  font-weight: 500;
 }
 
 .link:hover {
   text-decoration: underline;
 }
 
-/* ========== 배지 ========== */
+.region {
+  font-size: 0.9rem;
+  color: #777;
+  margin: 0.3rem 0;
+}
+
+.card-icon {
+  width: 40px;
+  height: 40px;
+  margin-bottom: 0.5rem;
+  object-fit: contain;
+}
+
+/* 배지 스타일 */
 .badge-group {
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.5rem;
 }
 
 .badge {
@@ -164,29 +157,24 @@ h3.title {
   white-space: nowrap;
 }
 
-.badge.secondary   { background-color: var(--secondary-color); }
-.badge.warning     { background-color: var(--warning-color); }
-.badge.success     { background-color: var(--success-color); }
-
-/* ========== 라벨 (상단 우측) ========== */
-.card-label {
-  position: absolute;
-  top: 0.75rem;
-  right: 0.75rem;
-  background: var(--primary-color);
-  color: white;
-  font-size: 0.75rem;
-  padding: 0.25rem 0.5rem;
-  border-radius: 4px;
+.badge.secondary {
+  background-color: var(--secondary-color);
 }
 
-/* ========== 반응형 카드 패딩 조정 ========== */
+.badge.warning {
+  background-color: var(--warning-color);
+}
+
+.badge.success {
+  background-color: var(--success-color);
+}
+
 @media (max-width: 480px) {
-  .card { padding: 1rem; }
+  .card { padding: 0.8rem; }
   .title { font-size: 1.1rem; }
 }
 
-/* ========== 푸터 ========== */
+/* 푸터 */
 footer {
   margin-top: 5rem;
   padding: 2rem 1rem;
@@ -199,7 +187,7 @@ footer {
   flex-wrap: wrap;
   gap: 1rem;
   font-size: 0.9rem;
-  color: var(--gray-dark);
+  color: #444;
 }
 
 .footer-content {
@@ -212,18 +200,3 @@ footer {
 
 footer a,
 .footer-content a {
-  color: var(--primary-color);
-  margin: 0 0.5rem;
-  text-decoration: none;
-}
-
-footer a:hover {
-  text-decoration: underline;
-}
-
-.trust-icon {
-  width: 24px;
-  height: auto;
-  margin-right: 0.5rem;
-  vertical-align: middle;
-}
